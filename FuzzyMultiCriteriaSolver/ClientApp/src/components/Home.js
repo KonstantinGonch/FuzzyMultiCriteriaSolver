@@ -6,20 +6,20 @@ export class Home extends Component {
   render() {
     return (
       <div>
-        <h1>Hello, world!</h1>
-        <p>Welcome to your new single-page application, built with:</p>
-        <ul>
-          <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>
-          <li><a href='https://facebook.github.io/react/'>React</a> for client-side code</li>
-          <li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>
-        </ul>
-        <p>To help you get started, we have also set up:</p>
-        <ul>
-          <li><strong>Client-side navigation</strong>. For example, click <em>Counter</em> then <em>Back</em> to return here.</li>
-          <li><strong>Development server integration</strong>. In development mode, the development server from <code>create-react-app</code> runs in the background automatically, so your client-side resources are dynamically built on demand and the page refreshes when you modify any file.</li>
-          <li><strong>Efficient production builds</strong>. In production mode, development-time features are disabled, and your <code>dotnet publish</code> configuration produces minified, efficiently bundled JavaScript files.</li>
-        </ul>
-        <p>The <code>ClientApp</code> subdirectory is a standard React application based on the <code>create-react-app</code> template. If you open a command prompt in that directory, you can run <code>npm</code> commands such as <code>npm test</code> or <code>npm install</code>.</p>
+            <h1>Добро пожаловать в АИИС "Вставить сюда название"</h1>
+            <br/>
+            <h3>АИИС создана с целью предоставить возможность решения задач многокритериального анализа альтернатив в нечеткой информационной среде</h3>
+            <br/>
+            <h4>Алгоритм работы с АИИС:</h4>
+            <p>1. Введение и описание задачи. На первом шаге необходимо ввести заголовок и описание решаемой задачи</p>
+            <p>2. Описание входных переменных. На втором шаге необходимо ввести описание каждой из входных переменных набора данных, обозначив, являются ли они четкими или нечеткими</p>
+            <p>3. Присвоение функций принадлежности. На данном этапе необходимо описать функции принадлежности для каждой из нечетких переменных набора данных</p>
+            <p>4. Передача датасета для обучения ANFIS. На данном шаге происходит загрузка файла с набором данных для обучения модели</p>
+            <p>5. Выдача результата обучения. На данной странице происходит показ результатов обучения нейросети</p>
+            <p>6. Ввод данных для расчета с помощью ANFIS</p>
+            <div>
+                <button className="btn btn-primary"><a href="/describe-objective" style={{ color: 'white' }}>Приступить к работе</a></button>
+            </div>
       </div>
     );
   }

@@ -1,3 +1,4 @@
+using FuzzyMultiCriteriaSolver.Managers;
 using FuzzyMultiCriteriaSolver.Util;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +14,9 @@ builder.Services.AddDbContext<CriteriaSolverContext>(options =>
 	options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
 });
 
+builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<IObjectivesStorageManager, ObjectiveStorageManager>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -22,6 +26,16 @@ if (!app.Environment.IsDevelopment())
 
 app.UseStaticFiles();
 app.UseRouting();
+app.UseSwagger();
+app.UseSwaggerUI(c =>
+{
+	c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+});
+
+app.UseEndpoints(endpoints =>
+{
+	endpoints.MapControllers();
+});
 
 
 app.MapControllerRoute(
