@@ -10,6 +10,12 @@ namespace FuzzyMultiCriteriaSolver.Models
 		public long Id { get; set; }
 
 		/// <summary>
+		/// Ссылка на переменную
+		/// </summary>
+		public Variable Variable { get; set; }
+		public long VariableId { get; set; }
+
+		/// <summary>
 		/// Тип функции принадлежности
 		/// </summary>
 		public MembershipFunctionType MembershipFunctionType { get; set; }

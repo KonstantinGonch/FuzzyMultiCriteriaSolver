@@ -19,11 +19,6 @@
 		public string Title { get; set; }
 
 		/// <summary>
-		/// Значение переменной
-		/// </summary>
-		public decimal Value { get; set; }
-
-		/// <summary>
 		/// Четкая переменная или нет
 		/// </summary>
 		public bool IsStrict { get; set; }

@@ -3,6 +3,7 @@ using System;
 using FuzzyMultiCriteriaSolver.Util;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FuzzyMultiCriteriaSolver.Migrations
 {
     [DbContext(typeof(CriteriaSolverContext))]
-    partial class CriteriaSolverContextModelSnapshot : ModelSnapshot
+    [Migration("20240814142627_VariableDescriptionRemoveValueAndMFuncReferenceMigration")]
+    partial class VariableDescriptionRemoveValueAndMFuncReferenceMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

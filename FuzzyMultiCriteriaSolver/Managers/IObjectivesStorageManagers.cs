@@ -1,4 +1,5 @@
 ﻿using FuzzyMultiCriteriaSolver.Models;
+using FuzzyMultiCriteriaSolver.Models.DTO;
 
 namespace FuzzyMultiCriteriaSolver.Managers
 {
@@ -9,5 +10,6 @@ namespace FuzzyMultiCriteriaSolver.Managers
 		public Task<Objective> SaveObjective(Objective objective);
 		public Task<Objective> UpdateObjective(Objective objective);
 		public Task<bool> DeleteObjective(long id);
+		public Task<ObjectiveDetailDTO> GetObjectiveDetails(long id);
 	}
 }

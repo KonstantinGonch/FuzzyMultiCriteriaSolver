@@ -1,5 +1,6 @@
 ﻿using FuzzyMultiCriteriaSolver.Managers;
 using FuzzyMultiCriteriaSolver.Models;
+using FuzzyMultiCriteriaSolver.Models.DTO;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FuzzyMultiCriteriaSolver.Controllers
@@ -27,6 +28,13 @@ namespace FuzzyMultiCriteriaSolver.Controllers
 		public async Task<Objective> GetObjective([FromRoute] long id)
 		{
 			return await _objectiveStorageManager.GetObjective(id);
+		}
+
+		[HttpGet]
+		[Route("detail/{id}")]
+		public async Task<ObjectiveDetailDTO> GetDetailedObjective([FromRoute] long id)
+		{
+			return await _objectiveStorageManager.GetObjectiveDetails(id);
 		}
 
 		[HttpPost]
