@@ -3,6 +3,7 @@ import axios from 'axios';
 import Modal from '../ModalComponent/Modal';
 
 function DescribeObjective() {
+    const [id, setId] = useState(0);
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [isSaved, setIsSaved] = useState(false);
@@ -20,6 +21,7 @@ function DescribeObjective() {
             .then(response => {
                 setIsSaved(true);
                 setModalOpen(true);
+                setId(response.data.id);
             })
             .catch(error => {
                 console.error('Error creating objective: ', error);
@@ -30,6 +32,10 @@ function DescribeObjective() {
         event.preventDefault();
 
         setModalOpen(false);
+    }
+
+    const getLinkToNextStep = () => {
+        return `/describe-variables?objectiveId=${id}`
 	}
 
     return (
@@ -49,7 +55,7 @@ function DescribeObjective() {
                 </div>
             </form>
             <div className="form-group" style={{ marginTop: "1em" }}>
-                <button className="btn btn-primary" disabled={!isSaved}>Продолжить</button>
+                <button className="btn btn-primary" disabled={!isSaved}><a style={{ color: 'white' }} href={getLinkToNextStep()}></a>Продолжить</button>
             </div>
             <Modal isOpen={modalOpen} onClose={handleModalClose}>
                 <>

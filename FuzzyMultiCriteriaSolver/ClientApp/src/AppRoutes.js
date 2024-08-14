@@ -1,4 +1,5 @@
 import DescribeObjective from "./components/DescribeObjectiveComponent/DescribeObjective";
+import DescribeVariables from "./components/DescribeVariablesComponent/DescribeVariables";
 import { Home } from "./components/Home";
 import ObjectivesList from "./components/ObjectivesListComponent/ObjectivesList";
 
@@ -14,7 +15,11 @@ const AppRoutes = [
   {
       path: '/objectives',
       element: <ObjectivesList />
-  }
+    },
+    {
+      path: '/describe-variables',
+      element: <DescribeVariables />
+	}
 ];
 
 export default AppRoutes;

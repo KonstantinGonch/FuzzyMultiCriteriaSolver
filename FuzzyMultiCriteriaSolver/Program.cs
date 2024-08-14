@@ -16,6 +16,7 @@ builder.Services.AddDbContext<CriteriaSolverContext>(options =>
 
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IObjectivesStorageManager, ObjectiveStorageManager>();
+builder.Services.AddScoped<IVariableStorageManager, VariableStorageManager>();
 
 var app = builder.Build();
 
