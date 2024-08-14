@@ -1,5 +1,6 @@
 ﻿using FuzzyMultiCriteriaSolver.Managers;
 using FuzzyMultiCriteriaSolver.Models;
+using FuzzyMultiCriteriaSolver.Models.DTO;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FuzzyMultiCriteriaSolver.Controllers
@@ -31,7 +32,7 @@ namespace FuzzyMultiCriteriaSolver.Controllers
 
 		[HttpPost]
 		[Route("add")]
-		public async Task<Variable> AddVariable([FromBody]Variable variable)
+		public async Task<Variable> AddVariable([FromBody]VariableSaveDTO variable)
 		{
 			return await _variableStorageManager.AddVariable(variable);
 		}

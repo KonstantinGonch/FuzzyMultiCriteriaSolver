@@ -1,4 +1,5 @@
 ﻿using FuzzyMultiCriteriaSolver.Models;
+using FuzzyMultiCriteriaSolver.Models.DTO;
 using FuzzyMultiCriteriaSolver.Util;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,11 +14,17 @@ namespace FuzzyMultiCriteriaSolver.Managers
 			_context = ctx;
 		}
 
-		public async Task<Variable> AddVariable(Variable variable)
+		public async Task<Variable> AddVariable(VariableSaveDTO variable)
 		{
-			await _context.Variables.AddAsync(variable);
+			var newVar = new Variable
+			{
+				ObjectiveId = variable.ObjectiveId,
+				Title = variable.Title,
+				IsStrict = variable.IsStrict,
+			};
+			await _context.Variables.AddAsync(newVar);
 			await _context.SaveChangesAsync();
-			return variable;
+			return newVar;
 		}
 
 		public async Task<bool> DeleteVariable(long id)
